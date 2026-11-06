@@ -1,10 +1,3 @@
-services:
-  - type: web
-    name: pdf-number-filter-bot
-    runtime: python
-    plan: free
-    buildCommand: pip install -r requirements.txt
-    startCommand: python bot.py
-    envVars:
-      - key: BOT_TOKEN
-        sync: false
+buildCommand: |
+  apt-get update
+  apt-get install -y poppler-utils tesseract-ocr
